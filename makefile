@@ -8,5 +8,5 @@ CC=gcc                              # pøekladaè jazyka C
 CFLAGS=-std=gnu99 -Wall -Wextra -Werror -pedantic  # parametry pøekladaèe
 SOURCES=rivescrossing.c
 
-hello: $(SOURCES)
+riverscrossing: $(SOURCES)
 	$(CC) $(CFLAGS) $(SOURCES) -o $@
