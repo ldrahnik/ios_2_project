@@ -3,3 +3,10 @@
 	<stdio.h>
 	<stdlib.h>
 
+1398367488 source:d:\dropbox\vut fit\2. semestr\ios\2.projekt\ios_2_project\rivercrossing.c
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<stdbool.h>
+
