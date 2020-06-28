@@ -6,19 +6,7 @@
   * Popis programu: Program implementuje modifikovaný synchronizacní River Crossing Problem..
   */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/sem.h>
-#include <sys/ipc.h>
-#include <sys/shm.h>
-#include <semaphore.h>
-#include <sys/wait.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <time.h>
-#include <stdarg.h>
+#include "rivercrossing.h"
 
 FILE *myFile;
 
@@ -34,52 +22,6 @@ int *COUNTER;
 int *MOLO_SERFS;
 int *MOLO_HACKERS;
 int *SHIP_PERSONS;
-
-/** Error codes */
-enum tecodes
-{
-    EOK = 0,
-    ECLWRONG,
-    EUNKNOWN,
-};
-
-/** Error messages */
-const char *ECODEMSG[] =
-{
-    [ECLWRONG] = "Wrong parameters! Try -h.\n",
-};
-
-/**
- * Struct of params
- */
-typedef struct params
-{
-    int P;
-    int H;
-    int S;
-    int R;
-    int ecode;         /**< Error code => tecodes. */
-} TParams;
-
-/**
- * Prototypes
- */
-TParams getArgs(int argc, char *argv[]);
-void printECode(int ecode);
-int isNumber(char *ch);
-int testArgs(TParams result);
-void waitingForAll();
-void mainP(TParams params);
-int startSemaphores();
-int destroySemaphores();
-int myRandom(int limit);
-void hacker(TParams params, int i);
-void serf(TParams params, int i);
-void serfs(TParams params);
-void hackers(TParams params);
-void myPrintf(FILE *file, const char *message, ...);
-void checkSetup();
-void destroyAll();
 
 void myPrintf(FILE *file, const char *message, ...) {
 	va_list args;
@@ -676,6 +618,3 @@ int main(int argc, char **argv) {
 	mainP(params);
     return EXIT_SUCCESS;
 }
-
-
-
