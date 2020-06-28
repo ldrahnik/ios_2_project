@@ -6,7 +6,7 @@
 NAME=rivercrossing
 CC=gcc
 CFLAGS=-std=gnu99 -Wall -Wextra -Werror -pedantic -pthread  # parametry pøekladaèe
-SOURCES=rivercrossing.c rivercrossing.h
+SOURCES=src/*.c src/*.h
 
 $(NAME): $(SOURCES)
 	$(CC) $(CFLAGS) $(SOURCES) -o $@
